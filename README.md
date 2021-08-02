@@ -1,16 +1,70 @@
-# careerfinder
+# Career-Finder Mobile Applicatiom ( Flutter )
+(Documentation)
 
-A new Flutter project.
+## How to run ?
 
-## Getting Started
+### * Windows
 
-This project is a starting point for a Flutter application.
+#### -> VS Code 
+* flutter pub get (in terminal )
+* flutter run (in termninal)
 
-A few resources to get you started if this is your first Flutter project:
+#### -> Android Studio
+* open project and click on run.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### * Mac
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### -> VS Code 
+* pub get (in terminal )
+* cd ios ( move to ios directory of project )
+* pod install (in terminal)
+* cd.. (interminal)
+* flutter run (in termninal)
+
+#### -> Xcode
+* open ( project->ios->Runner.xcworkspace ) in xcode.
+* click on run.
+
+## Details
+
+* BLoC Pattern Architecture used.
+* For State management Flutter_bloc and Equatable packages are used.
+* For Http request http package is used.
+
+
+## Project Flow and In-depth Technical Details
+
+* App starts.
+* navigates to splash screen, here hold for 2 seconds, Then Navigates to authentication check, then if authenticated then proceeds to home screen else login screen.
+* if user has an account then he/she can directly login. After successful login it will navigate to home screen.
+* If user is new then he/she can create account with account option of seeker or recruiter after successful signup it will ask for email verification and navigates to login screen once email varified user can login.
+* At home screen first it will hit the job API and check if job is available, now if jobs available then it will collect the jobs in a list of job model class and then after shimmer loader it will populate the home screen with job cards where user can see the available jobs and it's details.
+
+
+## Validations
+
+* Data validation.
+* Http response and request validation.
+* Form validation.
+* Exception handling.
+
+## Others
+
+* Adaptive App Icon for both Android and iOS used.
+* Animation used.
+* Shimmer loader used.
+* Sound Null-Safety.
+
+## Test
+
+* ## Tested with Android.
+![careerfinder_app_android_screenshorts](https://user-images.githubusercontent.com/22419021/127860384-1b2f7281-6059-488d-88dc-e7bd9a244588.png)
+
+
+* ## Tested with iOS.
+![careerfinder_app_ios_screenshorts](https://user-images.githubusercontent.com/22419021/127860452-e599b678-c342-41de-9e13-7811103771e8.png)
+
+
+## Download App ( Android )
+https://www.dropbox.com/s/zatvmck8kv8t092/career_finder.apk
+
