@@ -30,7 +30,7 @@ class _PreauthScreenState extends State<PreauthScreen> {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (BuildContext context, AuthState state) {
-        print(state);
+       // print(state);
         if (state is UserLoggedInState) {
           return Navigator.pushReplacementNamed(context, '/homescreen');
         } else if (state is UserNotLoggedInState) {

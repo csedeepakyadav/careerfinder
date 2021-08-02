@@ -21,10 +21,10 @@ class AuthRepository {
         //  'Accept': 'application/json'
         //  'Authorization': '',
       });
-      print(response.body);
+     // print(response.body);
       if (response.statusCode == 200) {
         var responseBody = json.decode(response.body);
-        print(responseBody);
+     //   print(responseBody);
         if (responseBody['staus'] == "true") {
           _authModel = AuthResponseModel(
               status: responseBody['staus'],
@@ -41,8 +41,8 @@ class AuthRepository {
           return _authModel;
         }
       } else {
-        print("3");
-        print('no response');
+     //   print("3");
+     //   print('no response');
         _authModel = AuthResponseModel(
             status: "false",
             message: "Some Error Occured, Please Try Again Later",
@@ -84,10 +84,10 @@ class AuthRepository {
         // 'Accept': 'application/json'
         //  'Authorization': '',
       });
-      print(response);
+     // print(response);
       if (response.statusCode == 200) {
         var responseBody = json.decode(response.body);
-        print(responseBody);
+     //   print(responseBody);
         if (responseBody['staus'] == "true") {
           _authModel = AuthResponseModel(
               status: responseBody['staus'],
@@ -104,8 +104,8 @@ class AuthRepository {
           return _authModel;
         }
       } else {
-        print("3");
-        print('no response');
+        //print("3");
+       // print('no response');
         _authModel = AuthResponseModel(
             status: "false",
             message: "Some Error Occured, Please Try Again Later",

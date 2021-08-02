@@ -57,9 +57,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     final msg = BlocBuilder<AuthBloc, AuthState>(
       builder: (BuildContext context, AuthState state) {
-        print(state);
+        //print(state);
         if (state is AuthInitState) {
-          print("this state");
         }
         if (state is AuthErrorState) {
           return Center(
@@ -80,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
         body: BlocListener<AuthBloc, AuthState>(
             listener: (BuildContext context, AuthState state) {
-              print(state);
+           //   print(state);
 
               if (state is UserLoginSuccessState) {
                 return Navigator.pushReplacementNamed(

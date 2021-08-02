@@ -7,6 +7,7 @@ import 'package:careerfinder/src/widgets/job_card_widget.dart';
 import 'package:careerfinder/src/widgets/job_shimmer_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,10 +27,24 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  String name = "";
+
+  Future<String> getName() async {
+    String userName = "";
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    userName = prefs.getString("name");
+    return userName;
+  }
+
   @override
   void initState() {
     _jobBloc = BlocProvider.of<JobBloc>(context);
     _jobBloc..add(StartEvent());
+    getName().then((userName) {
+      setState(() {
+        name = userName;
+      });
+    });
     super.initState();
   }
 
@@ -40,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return BlocConsumer<JobBloc, JobState>(
       listener: (BuildContext context, JobState state) {
-        print(state);
+        //print(state);
         if (state is LoggedoutState) {
           Navigator.pushReplacementNamed(context, '/preauthscreen');
         }
@@ -161,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.black,
                           child: Text(
-                            "A",
+                            name[0].toUpperCase(),
                             style: TextStyle(
                                 fontSize: 50,
                                 fontWeight: FontWeight.bold,
