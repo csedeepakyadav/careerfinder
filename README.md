@@ -25,14 +25,14 @@
 * open ( project->ios->Runner.xcworkspace ) in xcode.
 * click on run.
 
-## Details
+## Technical Details
 
 * BLoC Pattern Architecture used.
 * For State management Flutter_bloc and Equatable packages are used.
 * For Http request http package is used.
 
 
-## Project Flow and In-depth Technical Details
+## In-depth Project Flow
 
 * App starts.
 * navigates to splash screen, here hold for 2 seconds, Then Navigates to authentication check, then if authenticated then proceeds to home screen else login screen.
@@ -67,4 +67,7 @@
 
 ## Download App ( Android )
 https://www.dropbox.com/s/zatvmck8kv8t092/career_finder.apk
+
+## Github Repository ( Source Code )
+https://github.com/csedeepakyadav/careerfinder
 
